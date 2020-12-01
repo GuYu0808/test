@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/jquery.validate.min.js"></script>
+		<script src="js/messages_zh.min.js"></script>
+	</head>
+	<body>
+		<form id="empForm">
+			<table border="1" cellspacing="0" width="800px" align="center">
+				<tr>
+					<td>真实姓名(不能为空)</td>
+					<td><input type="text" name="realname" />
+						<label for="realname" class="error" style="display:none;">用户名不能为空</label>
+					</td>
+				</tr>
+				<tr>
+					<td>密码(不能为空,长度6-12位数字):</td>
+					<td><input type="password" id="psw" name="psw" /></td>
+				</tr>
+				<tr>
+					<td>重复密码密码(不能为空,长度6-12位数字):</td>
+					<td><input type="password" id="psw2" name="psw2" /></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" value="保存"></td>
+				</tr>
+			</table>
+
+		</form>
+
+		<script type="text/javascript">
+			$(function() {
+				$("#empForm").validate({
+					rules: {
+						realname: {
+							required: true
+						}
+					},
+					messages: {
+						realname: {
+							required: "用户名不能为空"
+						}
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
